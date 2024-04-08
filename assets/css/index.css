@@ -1,0 +1,74 @@
+form{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 35vh;
+}
+
+form h1{
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#usernameWrapper, #passwordWrapper, #passwordConfirmWrapper{
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f4a4;
+    transition: border 0.2s;
+}
+
+#usernameWrapper svg, #passwordWrapper svg, #passwordConfirmWrapper svg{
+    height: 30px;
+    width: auto;
+    transform: translateY(10%);
+    transition: stroke 0.2s;
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    color: var(--text);
+    caret-color: var(--secondary);
+    width: 100%;
+    padding: 10px 0 15px 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#eye, #eyeConfirm{
+    height: 30px;
+    width: auto;
+    transform: translateY(10%);
+}
+
+button[type="submit"] {
+    font-family: 'Inter', sans-serif;
+    transform: translateX(50%);
+    width: 50%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--text);
+}
+
+a{
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #f0f0f4a4;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+/*Color scheme*/
+:root {
+    --text: #f0f0f4;
+    --background: #0c0e18;
+    --primary: #949dd9;
+    --secondary: #3b51dd;
+}
+
+/* Reset basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+
+body{
+    background-color: var(--background);
+    background-image: url("../images/back.svg");
+    color: var(--text);
+}
+
+/* Apply fonts */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+p, blockquote, pre, a {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
