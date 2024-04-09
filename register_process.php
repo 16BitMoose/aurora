@@ -4,6 +4,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $username = htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8');
     $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
+    $passwordConfirm = htmlspecialchars($_POST['passwordConfirm'], ENT_QUOTES, 'UTF-8');
+
+    if($passwordConfirm != $password){
+        header("Location: register.php?error=1");
+        exit();
+    }
 
     $checkUsername = $conn->prepare("SELECT * FROM usernames WHERE username = ?");
     $checkUsername->bind_param("s", $username);
