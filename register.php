@@ -31,7 +31,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
 </head>
 
 <body>
-  <form action="register_process.php" method="post">
+  <form action="assets/php/register_process.php" method="post">
     <h1>Register</h1>
     <div id="usernameWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="usernameSVG" class="icon icon-tabler icon-tabler-mail" width="44"
@@ -66,7 +66,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
         <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
         <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
       </svg>
-      <input type="password" id="passwordConfirm" name="password" placeholder="Confirm password*" required
+      <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password*" required
         onfocus="gainFocus(3)" onblur="loseFocus(3)">
       <img id="eyeConfirm" src="assets/images/eyeClosed.svg" onclick="viewPassword(2)">
     </div>

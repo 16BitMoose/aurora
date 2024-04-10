@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -20,8 +20,8 @@ $user = $_SESSION['username'];
 
 <body>
     <h2>Welcome, <?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>!</h2>
-    <a href="logout.php">Logout</a>
-    <a href="remove_user.php">Remove Profile</a>
+    <a href="assets/php/logout.php">Logout</a>
+    <a href="assets/php/remove_user.php">Remove Profile</a>
 </body>
 
 </html>

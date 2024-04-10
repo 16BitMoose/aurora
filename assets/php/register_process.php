@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
     $passwordConfirm = htmlspecialchars($_POST['passwordConfirm'], ENT_QUOTES, 'UTF-8');
 
-    if($passwordConfirm != $password){
-        header("Location: register.php?error=3");
+    if(strcmp($password, $passwordConfirm) !== 0){
+        header("Location: ../../register.php?error=3");
         exit();
     }
 
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $checkUsername->get_result();
 
     if ($result->num_rows > 0) {
-        header("Location: register.php?error=2");
+        header("Location: ../../register.php?error=2");
         exit();
     }
 
@@ -37,11 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $insertPassword->close();
 
-    header("Location: welcome.php");
+    header("Location: ../../welcome.php");
     $conn->close();
     exit();
 
 } else {
-    header("Location: register.php?error=1");
+    header("Location: ../../register.php?error=1");
     exit();
 }

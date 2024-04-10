@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: index.html");
+    header("Location: ../../index.php");
     exit();
 }
 
@@ -32,10 +32,10 @@ if ($getUserIDResult->num_rows > 0) {
     session_unset();
     session_destroy();
 
-    header("Location: index.html");
+    header("Location: ../../index.php");
     exit();
 } else {
-    header("Location: index.html");
+    header("Location: ../../index.php");
     exit();
 }
 ?>

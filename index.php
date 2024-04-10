@@ -31,7 +31,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
 </head>
 
 <body>
-  <form action="login_process.php" method="post">
+  <form action="assets/php/login_process.php" method="post">
     <h1>Get exclusive access to Aurora</h1>
     <div id="usernameWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="usernameSVG" class="icon icon-tabler icon-tabler-mail" width="44"

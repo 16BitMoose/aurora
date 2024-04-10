@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $username;
-            header("Location: welcome.php");
+            header("Location: ../../welcome.php");
         } else {
-            header("Location: index.php?error=3"); // Invalid password
+            header("Location: ../../index.php?error=3"); // Invalid password
         }
     } else {
-        header("Location: index.php?error=2"); // Username not found
+        header("Location: ../../index.php?error=2"); // Username not found
     }
 
     $stmt->close();
