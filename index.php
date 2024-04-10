@@ -1,3 +1,18 @@
+<?php
+if (isset($_GET['error']) && $_GET['error'] == 1) {
+  $error = "An unexpected error occured.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
+}
+if (isset($_GET["error"]) && $_GET["error"] == 2) {
+  $error = "Invalid email.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error2").innerHTML = "' . $error . '"; }</script>';
+}
+if (isset($_GET["error"]) && $_GET["error"] == 3) {
+  $error = "Invalid password.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +43,7 @@
       </svg>
       <input type="text" id="username" name="username" placeholder="Email" required onfocus="gainFocus(1)" onblur="loseFocus(1)">
     </div>
+    <div id="error2"></div>
     <div id="passwordWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="passwordSVG" class="icon icon-tabler icon-tabler-lock" width="44"
         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none" stroke-linecap="round"
@@ -40,6 +56,7 @@
       <input type="password" id="password" name="password" placeholder="Password" required onfocus="gainFocus(2)" onblur="loseFocus(2)">
       <img id="eye" src="assets/images/eyeClosed.svg" onclick="viewPassword(1)">
     </div>
+    <div id="error1"></div>
     <button type="submit">Login</button>
     <a href="register.php">Register</a>
   </form>

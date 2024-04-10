@@ -19,13 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $username;
             header("Location: welcome.php");
         } else {
-            header("Location: index.html"); // Invalid password
+            header("Location: index.php?error=3"); // Invalid password
         }
     } else {
-        header("Location: index.html"); // Username not found
+        header("Location: index.php?error=2"); // Username not found
     }
 
     $stmt->close();
     $conn->close();
 }
-?>

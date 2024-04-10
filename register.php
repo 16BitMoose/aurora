@@ -1,9 +1,15 @@
 <?php
 if (isset($_GET['error']) && $_GET['error'] == 1) {
-    echo "<p style='color: red;'>Something unexpected happened. Please try again.</p>";
-} 
+  $error = "An unexpected error occured.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
+}
 if (isset($_GET["error"]) && $_GET["error"] == 2) {
-    echo "<p style='color: red;'>Username already taken. Please try again.</p>";
+  $error = "Email already in use.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error2").innerHTML = "' . $error . '"; }</script>';
+}
+if (isset($_GET["error"]) && $_GET["error"] == 3) {
+  $error = "Passwords do not match.";
+  echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
 }
 ?>
 
@@ -25,7 +31,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
 </head>
 
 <body>
-    <form action="register_process.php" method="post">
+  <form action="register_process.php" method="post">
     <h1>Register</h1>
     <div id="usernameWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="usernameSVG" class="icon icon-tabler icon-tabler-mail" width="44"
@@ -35,8 +41,10 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
         <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
         <path d="M3 7l9 6l9 -6" />
       </svg>
-      <input type="text" id="username" name="username" placeholder="Email" required onfocus="gainFocus(1)" onblur="loseFocus(1)">
+      <input type="text" id="username" name="username" placeholder="Email*" required onfocus="gainFocus(1)"
+        onblur="loseFocus(1)">
     </div>
+    <div id="error2"></div>
     <div id="passwordWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="passwordSVG" class="icon icon-tabler icon-tabler-lock" width="44"
         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none" stroke-linecap="round"
@@ -46,23 +54,26 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
         <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
         <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
       </svg>
-      <input type="password" id="password" name="password" placeholder="Password" required onfocus="gainFocus(2)" onblur="loseFocus(2)">
+      <input type="password" id="password" name="password" placeholder="Password*" required onfocus="gainFocus(2)"
+        onblur="loseFocus(2)">
     </div>
     <div id="passwordConfirmWrapper">
-      <svg xmlns="http://www.w3.org/2000/svg" id="passwordConfirmSVG" class="icon icon-tabler icon-tabler-lock" width="44"
-        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" id="passwordConfirmSVG" class="icon icon-tabler icon-tabler-lock"
+        width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none"
+        stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" />
         <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
         <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
       </svg>
-      <input type="password" id="passwordConfirm" name="password" placeholder="Confirm password" required onfocus="gainFocus(3)" onblur="loseFocus(3)">
+      <input type="password" id="passwordConfirm" name="password" placeholder="Confirm password*" required
+        onfocus="gainFocus(3)" onblur="loseFocus(3)">
       <img id="eyeConfirm" src="assets/images/eyeClosed.svg" onclick="viewPassword(2)">
     </div>
-        <button type="submit">Register</button>
-    </form>
-    <script src="assets/js/focus.js"></script>
+    <div id="error1"></div>
+    <button type="submit">Register</button>
+  </form>
+  <script src="assets/js/focus.js"></script>
   <script src="assets/js/viewPassword.js"></script>
 </body>
 

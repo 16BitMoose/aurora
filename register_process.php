@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwordConfirm = htmlspecialchars($_POST['passwordConfirm'], ENT_QUOTES, 'UTF-8');
 
     if($passwordConfirm != $password){
-        header("Location: register.php?error=1");
+        header("Location: register.php?error=3");
         exit();
     }
 
@@ -45,4 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: register.php?error=1");
     exit();
 }
-?>
