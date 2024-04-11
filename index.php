@@ -1,4 +1,4 @@
-<?php
+<?php //Login error handling
 if (isset($_GET['error']) && $_GET['error'] == 1) {
   $error = "An unexpected error occured.";
   echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
@@ -42,8 +42,8 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
         <path d="M3 7l9 6l9 -6" />
       </svg>
       <input type="text" id="username" name="username" placeholder="Email" required onfocus="gainFocus(1)" onblur="loseFocus(1)">
-    </div>
-    <div id="error2"></div>
+    </div> <!--gainFocus/loseFocus is a "sketchy" solution, likely semantically wrong, but it works?-->
+    <div id="error2"></div> <!--Used to show the user relevant error-->
     <div id="passwordWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="passwordSVG" class="icon icon-tabler icon-tabler-lock" width="44"
         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none" stroke-linecap="round"
@@ -56,7 +56,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
       <input type="password" id="password" name="password" placeholder="Password" required onfocus="gainFocus(2)" onblur="loseFocus(2)">
       <img id="eye" src="assets/images/eyeClosed.svg" onclick="viewPassword(1)">
     </div>
-    <div id="error1"></div>
+    <div id="error1"></div> <!--Used to show the user relevant error-->
     <button type="submit">Login</button>
     <a href="register.php">Register</a>
   </form>

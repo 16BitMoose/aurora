@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8');
     $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
 
-    $sql = "SELECT user_id, password FROM usernames JOIN passwords USING (user_id) WHERE username = ?";
+    $sql = "SELECT user_id, password FROM usernames JOIN passwords USING (user_id) WHERE username = ?"; //Get hashed password from user_id
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['password'])) { //Check password against hash
             session_start();
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $username;
-            header("Location: ../../welcome.php");
+            header("Location: ../../welcome.php"); //Login completed
         } else {
             header("Location: ../../index.php?error=3"); // Invalid password
         }

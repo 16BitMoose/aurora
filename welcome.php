@@ -1,11 +1,9 @@
-<?php
+<?php //User session handling
 session_start();
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
 }
-
 $user = $_SESSION['username'];
 ?>
 

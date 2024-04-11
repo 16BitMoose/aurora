@@ -1,4 +1,4 @@
-<?php
+<?php //Register error handling
 if (isset($_GET['error']) && $_GET['error'] == 1) {
   $error = "An unexpected error occured.";
   echo '<script type="text/javascript">window.onload = function() { document.getElementById("error1").innerHTML = "' . $error . '"; }</script>';
@@ -23,7 +23,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
   <title>Register | Aurora</title>
   <!--CSS-->
   <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/index.css"> <!--Should use a separate .css file, but since both pages share most of their styling it seems redundant-->
   <!--Font import-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,9 +42,9 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
         <path d="M3 7l9 6l9 -6" />
       </svg>
       <input type="text" id="username" name="username" placeholder="Email*" required onfocus="gainFocus(1)"
-        onblur="loseFocus(1)">
+        onblur="loseFocus(1)"> <!--gainFocus/loseFocus is a "sketchy" solution, likely semantically wrong, but it works?-->
     </div>
-    <div id="error2"></div>
+    <div id="error2"></div> <!--Used to show the user relevant error-->
     <div id="passwordWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="passwordSVG" class="icon icon-tabler icon-tabler-lock" width="44"
         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f0f0f4" fill="none" stroke-linecap="round"
@@ -70,7 +70,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
         onfocus="gainFocus(3)" onblur="loseFocus(3)">
       <img id="eyeConfirm" src="assets/images/eyeClosed.svg" onclick="viewPassword(2)">
     </div>
-    <div id="error1"></div>
+    <div id="error1"></div> <!--Used to show the user relevant error-->
     <button type="submit">Register</button>
   </form>
   <script src="assets/js/focus.js"></script>
