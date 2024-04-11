@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $insertPassword->close();
 
-    header("Location: ../../welcome.php"); //Register completed
+    header("Location: ../../gallery.php"); //Register completed
     $conn->close();
     exit();
 

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $username;
-            header("Location: ../../welcome.php"); //Login completed
+            header("Location: ../../gallery.php"); //Login completed
         } else {
             header("Location: ../../index.php?error=3"); // Invalid password
         }

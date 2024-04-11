@@ -42,7 +42,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
         <path d="M3 7l9 6l9 -6" />
       </svg>
       <input type="text" id="username" name="username" placeholder="Email" required onfocus="gainFocus(1)" onblur="loseFocus(1)">
-    </div> <!--gainFocus/loseFocus is a "sketchy" solution, likely semantically wrong, but it works?-->
+    </div> <!--gainFocus/loseFocus is a "sketchy" solution, likely semantically wrong, but it works-->
     <div id="error2"></div> <!--Used to show the user relevant error-->
     <div id="passwordWrapper">
       <svg xmlns="http://www.w3.org/2000/svg" id="passwordSVG" class="icon icon-tabler icon-tabler-lock" width="44"
