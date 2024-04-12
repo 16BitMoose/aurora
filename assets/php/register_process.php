@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $checkUsername->get_result(); //Check if username matches any user in database
 
     if ($result->num_rows > 0) {
-        header("Location: ../../register.php?error=2"); //User with that username does not exist
+        header("Location: ../../register.php?error=2"); //User with that username does already exist
         exit();
     }
 

@@ -23,7 +23,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 3) {
   <title>Register | Aurora</title>
   <!--CSS-->
   <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/index.css"> <!--Should use a separate .css file, but since both pages share most of their styling it seems redundant-->
+  <link rel="stylesheet" href="assets/css/register.css">
   <!--Font import-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

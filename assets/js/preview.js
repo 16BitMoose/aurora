@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayPreviewImages(images) {
         var galleryContainer = document.getElementById('preview-container');
         galleryContainer.innerHTML = '';
-
+        images = ""
         images.forEach(function(imagePath) {
             var img = document.createElement('img');
             img.src = imagePath;

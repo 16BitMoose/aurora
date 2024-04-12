@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const loadMoreButton = document.getElementById("loadMore");
     let startIndex = 0;
-    const imagesPerPage = 5;
+    const imagesPerPage = 20;
 
     function loadImages() {
         const xhr = new XMLHttpRequest();
